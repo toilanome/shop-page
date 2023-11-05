@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import './Item.css'
 export const Item = (props) => {
   return (
     <div className='item'>

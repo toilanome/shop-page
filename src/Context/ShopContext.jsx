@@ -1,5 +1,6 @@
 import React, { createContext, useState } from 'react'
 import all_product from '../components/Assets/all_product'
+import {toast} from "react-toastify"
 export const ShopContext = createContext(null)
 
 const getDefaultCart = () =>{
@@ -19,10 +20,13 @@ const ShopContextProvider = (props) =>{
 
     const addToCart = (itemId) =>{
         setCartItems((prev) =>({...prev, [itemId]:prev[itemId]+1}))
+        toast.success("Thêm sản phẩm thành công =)))")
         console.log("Cart:",cartItems);
     }
     const removeCart = (itemId) =>{
         setCartItems((prev) =>({...prev, [itemId]:prev[itemId]-1}))
+        toast.success("Xóa sản phẩm thành công =)))")
+
     }
     const getTotalProduct = () =>{
         let totalAmount = 0;
